@@ -2,6 +2,7 @@ package com.prueba.tecnica.demo.mapper;
 
 import com.prueba.tecnica.demo.domain.Cliente;
 import com.prueba.tecnica.demo.dto.ClienteDTO;
+import com.prueba.tecnica.demo.util.EncriptarUtils;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -14,7 +15,8 @@ public interface ClienteMapper {
 
     ClienteMapper mapper = Mappers.getMapper(ClienteMapper.class);
     @Mappings({
-            @Mapping(source = "tipoDocumento", target = "tipoDocumento", qualifiedByName = "mapTipoDocumentoToString")
+            @Mapping(source = "tipoDocumento", target = "tipoDocumento", qualifiedByName = "mapTipoDocumentoToString"),
+            @Mapping(source = "codigoUnico", target = "codigoUnico", qualifiedByName = "encriptarCodigoUnico")
     })
     ClienteDTO clienteToClienteDto(Cliente cliente);
 
@@ -23,6 +25,10 @@ public interface ClienteMapper {
     })
     Cliente clienteDtoToCliente(ClienteDTO clienteDTO);
 
+    @Named("encriptarCodigoUnico")
+    default String encriptarCodigoUnico(String codigoUnico) {
+        return EncriptarUtils.Encriptar(codigoUnico);
+    }
     @Named("mapTipoDocumentoToString")
     default String mapTipoDocumentoToString(Integer tipoDocumento) {
         return TipoDocumentoEnum.obtenerPorCodigo(tipoDocumento).getDescripcion();
