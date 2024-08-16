@@ -59,13 +59,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/customer",
+					"raw": "localhost:8080/customers",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"customer"
+						"customers"
 					]
 				}
 			},
@@ -87,13 +87,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/customer/c4ca4238a0b923820dcc509a6f75849b",
+					"raw": "localhost:8080/customers/c4ca4238a0b923820dcc509a6f75849b",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"customer",
+						"customers",
 						"c4ca4238a0b923820dcc509a6f75849b"
 					]
 				}
@@ -125,13 +125,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/customer",
+					"raw": "localhost:8080/customers",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"customer"
+						"customers"
 					]
 				}
 			},
